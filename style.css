@@ -1,0 +1,130 @@
+
+body {
+    background-image: url(techTower.jpeg);
+    background-position: center center;
+    background-size: cover;
+    font-family:'Franklin Gothic Medium', 'Arial Bold', Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    background-color: navy;
+    color: transparent;
+    text-shadow: 0.5px 0.5px 0.5px aqua;
+    margin: 3px auto;
+    font-size: large;
+}
+
+ .backingBox {
+    width: 600px;
+    padding: 10px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: navy;
+    background-position: center center;
+    background-size: cover;
+ }
+
+ #slidePuzzle {
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+ }
+  #slidePuzzleBefore {
+    content: " ";
+    background-color: navy;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+  }
+ 
+.tile {
+    width: 199px;
+    height: 199px;
+    border: 1px solid black;
+    background-image: url(buzzGT.png);
+    background-size: 600px 600px;
+    transition: all 300ms;
+    position: absolute;
+  }
+
+
+
+
+/*.grid {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 120px);
+}
+div > div {
+    padding: 10px;
+    background-color: gold;
+}
+
+
+ Divide the image into 9 separate squares,
+ leave one empty for the sliding function 
+
+ .tile1 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: left top;
+ }
+ .tile2 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: center top;
+ }
+ .tile3 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: right top;
+ }
+ .tile4 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: left center;
+ }
+ .tile5 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: center center;
+ }
+ .tile6 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: right center;
+ }
+ .tile7 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: left bottom;
+ }
+ .tile8 {
+    width: 120px;
+    height: 120px;
+    background: url(buzzGT.png);
+    background-position: center bottom;
+ }
+ .tile9 {
+    width: 120px;
+    height: 120px;
+    background: white;
+    
+ }
+ */

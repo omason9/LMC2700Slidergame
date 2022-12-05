@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet">
+    <style>
+        html {
+            background: url(techTower.jpeg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+
+        body {
+
+          font-family:'Franklin Gothic Medium', 'Arial Bold', Arial, sans-serif;
+          text-align: center;
+        }
+    
+        h1 {
+          background-color: navy;
+          color: navy;
+          text-shadow: 4px 4px 4px gold;
+          -webkit-background-clip: text;
+             -moz-background-clip: text;
+                  background-clip: text;
+          margin: 3px auto;
+          font-size: 65px;
+        }
+    
+        #puzzle {
+          width: 600px;
+          height: 600px;
+          background-color: black;
+          overflow: hidden;
+          position: relative;
+          z-index: 1;
+        }
+    
+        #puzzle:before {
+          content: '';
+          background-color: navy;
+          background-position: center center;
+          background-size: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0.4;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-shadow: 0px 0px 1px black;
+          transition: all 200ms;
+        }
+    
+        .tile {
+          width: 199px;
+          height: 199px;
+          border: 1px solid black;
+          background-image: url(buzzGT.png);
+          background-size: 600px 600px;
+          transition: all 300ms;
+          position: absolute;
+        } 
+        .button {
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+
+        .button1 {
+          background-color: white;
+          color: black;
+          border: 2px solid navy;
+        }
+
+        .button1:hover {
+          background-color: gold;
+          color: white;
+        }
+    
+    
+        </style>
+</head>
+
+<body>
+    <h1>Unscramble Buzz!</h1>
+    <div class="backing">
+        <div id="puzzle">
+          <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+          </div>
+          <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+          </div>
+          <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+          </div>
+        </div>
+      </div>
+      <button class="button button1">New Game</button>
+</body>
+<script src="script.js"></script>
+</html>
