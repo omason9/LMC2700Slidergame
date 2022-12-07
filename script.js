@@ -1,8 +1,10 @@
 
 let emptyR = 2;
 let emptyC = 2;
-
-
+let movesCounter = 0;
+let tileGrid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+const correctTiles = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let gameRunning = false;
 
 var moveTile = function (tile, i, j) {
     var row = i;
@@ -15,16 +17,44 @@ var moveTile = function (tile, i, j) {
   
       //if possible move tile to empty space
       if (rOffset == 1 && cOffset == 0 || rOffset == 0 && cOffset == 1) {
+        movesCounter++;
         tile.style.marginLeft = emptyC * 200 + 'px';
         tile.style.marginTop = emptyR * 200 + 'px';
         //swap coordinates
         [row, emptyR] = [emptyR, row];
         [col, emptyC] = [emptyC, col];
+
+        //track swap in tileGrid for victory condition
+        var temp = tileGrid[emptyR][emptyC];
+        tileGrid[emptyR][emptyC] = tileGrid[row][col];
+        tileGrid[row][col] = temp;
+
+        console.log(tileGrid);
+        console.log(correctTiles);
+        console.log(checkVictory());
+
+        if (gameRunning && checkVictory()) {
+          alert("Congradulations, you completed the puzzle in " + movesCounter + " moves!");
+        }
+        
       }
     }
   };
+
+//determines if all the tiles are in the correct place
+function checkVictory() {
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      if (tileGrid[i][j] != correctTiles[i][j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
   
-  var shuffle = function () {
+  function shuffle() {
+    gameRunning = false;
     var rows = document.querySelectorAll('.row');
     for (let i = 0; i < 85; ++i) {
       var row = ~~(Math.random() * rows.length);
@@ -32,6 +62,8 @@ var moveTile = function (tile, i, j) {
       var tile = ~~(Math.random() * tiles.length);
       tiles.item(tile).click();
     }
+    movesCounter = 0;
+    gameRunning = true;
   };
   
   var initTiles = function () {
@@ -49,7 +81,7 @@ var moveTile = function (tile, i, j) {
   
         //add the click response to tile
         tile.addEventListener('click', moveTile(tile, i, j));
-  
+
         //set tile locations
         tile.style.marginLeft = j * 200 + 'px';
         tile.style.marginTop = i * 200 + 'px';
@@ -60,5 +92,13 @@ var moveTile = function (tile, i, j) {
     }
   };
   
-  initTiles();
-  shuffle();
+  function initializeGame() {
+    var restartButtton = document.querySelector('.button1');
+    restartButtton.addEventListener('click', shuffle());
+
+    initTiles();
+    shuffle();
+  }
+
+
+initializeGame();
