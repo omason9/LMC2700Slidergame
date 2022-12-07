@@ -33,7 +33,7 @@ h1 {
   background-size: cover;
 }
 
-#puzzle {
+.puzzle {
   margin: auto;
   width: 600px;
   height: 600px;
@@ -43,7 +43,7 @@ h1 {
   z-index: 1;
 }
 
-#puzzle:before {
+.puzzle:before {
   content: '';
   background-color: navy;
   background-position: center center;
@@ -64,6 +64,10 @@ a {
 a:hover {
   text-shadow: 0px 0px 1px black;
   transition: all 200ms;
+}
+
+.row {
+  
 }
 
 .tile {
