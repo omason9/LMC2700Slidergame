@@ -62,32 +62,6 @@ function checkVictory() {
     movesCounter = 0;
     gameRunning = true;
   };
-  
-  function initTiles() {
-    //get all rows
-    var rows = document.querySelectorAll('.row');
-  
-    //iterate thru rows
-    for (let i = 0; i < rows.length; ++i) {
-      var row = rows.item(i);
-  
-      //go thru each tile on each row
-      var tiles = row.querySelectorAll('.tile');
-      for (let j = 0; j < tiles.length; ++j) {
-        var tile = tiles.item(j);
-  
-        //add the click response to tile
-        tile.addEventListener('click', moveTile(tile, i, j));
-
-        //set tile locations
-        tile.style.marginLeft = j * 200 + 'px';
-        tile.style.marginTop = i * 200 + 'px';
-  
-        // set what part of image will show on tile
-        tile.style.backgroundPosition = `${600 - j * 200}px ${600 - i * 200}px`;
-      }
-    }
-  };
 
   function initTilesScalable(difficulty) {
     //Indentify the puzzle div
@@ -152,6 +126,7 @@ function checkVictory() {
   };
   
   function initializeGame() {
+    //currently commented out this stuff b/c it doesnt work
     //var restartButtton = document.querySelector('.button1');
     //restartButtton.addEventListener('click', shuffle());
 
