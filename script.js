@@ -1,4 +1,7 @@
-
+//Unscramble Buzz
+//By Katherine McNeice(Game Mechanic Implementation), Owen Mason(Game Mechanic Implementation)
+//Jimmy Liu(UI Design), Alistair Enoch(UI Design)
+//Nathan Weber(Game Mechanic Implementation and UI Design)
 let emptyR = 2;
 let emptyC = 2;
 scaledTileSize = 200;
