@@ -98,7 +98,7 @@ a:hover {
   border: 2px solid navy;
 }
 
-.button1:hover {
+.nextLevelEnabled:hover {
   background-color: gold;
   color: white;
 }
